@@ -2,8 +2,8 @@
   "name": "insight-bitcore-api",
   "private": true,
   "description": "An open-source bitcoin blockchain API. The Insight API provides you with a convenient, powerful and simple way to query and broadcast data on the bitcoin network and build your own services with it.",
-  "version": "0.2.18D",
-  "repository": "https://github.com/decred/insight-api",
+  "version": "0.2.18E",
+  "repository": "https://github.com/EXCCoin/insight-api",
   "contributors": [{
     "name": "Matias Alejo Garcia",
     "email": "ematiu@gmail.com"
@@ -24,9 +24,9 @@
     "email": "jungans@gmail.com"
   }],
   "bugs": {
-    "url": "https://github.com/decred/insight-api/issues"
+    "url": "https://github.com/EXCCoin/insight-api/issues"
   },
-  "homepage": "https://github.com/decred/insight-api",
+  "homepage": "https://github.com/EXCCoin/insight-api",
   "license": "MIT",
   "keywords": [
     "insight",
@@ -52,7 +52,7 @@
     "base58-native": "0.1.2",
     "bignum": "*",
     "morgan": "*",
-    "bitcore": "git://github.com/decred/bitcore.git#master-legacy",
+    "bitcore": "git@github.com:EXCCoin/bitcore.git#exchangecoin-legacy",
     "bufferput": "git://github.com/bitpay/node-bufferput.git",
     "buffertools": "*",
     "commander": "^2.3.0",
@@ -71,7 +71,7 @@
     "socket.io": "1.0.6",
     "socket.io-client": "1.0.6",
     "soop": "=0.1.5",
-    "winston": "*",
+    "winston": "^2.4.3",
     "xmlhttprequest": "~1.6.0"
   },
   "devDependencies": {

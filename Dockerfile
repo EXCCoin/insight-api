@@ -1,11 +1,11 @@
-#DOCKER_IMAGE_TAG=decred/insight-api
+#DOCKER_IMAGE_TAG=EXCCoin/insight-api
 FROM ubuntu:trusty
 
-LABEL description="Insight API (Decred fork)"
+LABEL description="Insight API (Exchange fork based on Decred fork)"
 LABEL version="1.0"
-LABEL maintainer "peter@froggle.org"
+LABEL maintainer="filip@excc.co"
 
-ENV NODE_VERSION v0.10.40
+ENV NODE_VERSION v0.10.48
 ENV TERM linux
 ENV USER insight
 
@@ -40,7 +40,7 @@ EXPOSE 3004
 ENV BITCOIND_USER user
 ENV BITCOIND_PASS pass
 ENV BITCOIND_HOST dcrd
-ENV INSIGHT_NETWORK dcrdtestnet
+ENV INSIGHT_NETWORK exccdtestnet
 ENV LOGGER_LEVEL debug
 ENV INSIGHT_FORCE_RPC_SYNC 1
 ENV PATH $HOME/.nvm/$NODE_VERSION/bin:$PATH

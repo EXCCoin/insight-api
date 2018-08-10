@@ -10,7 +10,7 @@ var assert        = require('assert'),
   util            = require('bitcore/util/util');
 
   var be = new BlockExtractor(config.bitcoind.dataDir, config.network);
-  var network = config.network === 'dcrdtestnet' ? networks.dcrdtestnet: networks.dcrdlivenet;
+  var network = config.network === 'exccdtestnet' ? networks.exccdtestnet: networks.exccdlivenet;
 //  console.log('[read_block.js.13]', be.nextFile() );
 
   var c=0;

@@ -56,21 +56,21 @@ case 'btcdtestnet':
     b_port = '18334';
     p2p_port = '18333';
     break;
-case 'dcrdlivenet':
-    env = 'dcrdlivenet';
-    var network = 'dcrdlivenet';
-    db = home + '/dcrd';
+case 'exccdlivenet':
+    env = 'exccdlivenet';
+    var network = 'exccdlivenet';
+    db = home + '/exccd';
     port = '3003';
     b_port = '9109';
-    p2p_port = '9108';
+    p2p_port = '9666';
     break;
-case 'dcrdtestnet':
-    env = 'dcrdtestnet';
-    var network = 'dcrdtestnet';
-    db = home + '/dcrdtestnet';
+case 'exccdtestnet':
+    env = 'exccdtestnet';
+    var network = 'exccdtestnet';
+    db = home + '/exccdtestnet';
     port = '3004';
     b_port = '19109';
-    p2p_port = '19108';
+    p2p_port = '11999';
     break;
 }
 port = parseInt(process.env.INSIGHT_PORT) || port;

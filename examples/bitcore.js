@@ -1300,7 +1300,7 @@ module.exports=require('DB/p3X');
 var log = require('../util/log');
 
 var MAX_RECEIVE_BUFFER = 10000000;
-var PROTOCOL_VERSION = 70000;
+var PROTOCOL_VERSION = 1;
 
 var Put = require('bufferput');
 var Buffers = require('buffers');
@@ -1313,7 +1313,6 @@ var Transaction = require('./Transaction');
 var util = require('../util');
 var Parser = require('../util/BinaryParser');
 var buffertools = require('buffertools');
-var doubleSha256 = util.twoSha256;
 var SecureRandom = require('./SecureRandom');
 var nonce = SecureRandom.getPseudoRandomBuffer(8);
 var nodeUtil = require('util');
@@ -1603,7 +1602,7 @@ Connection.prototype.sendMessage = function(command, payload) {
 
     var checksum;
     if (this.sendVer >= 209) {
-      checksum = doubleSha256(payload).slice(0, 4);
+      checksum = util.sha256(payload).slice(0, 4);
     } else {
       checksum = new Buffer([]);
     }
@@ -1692,7 +1691,7 @@ Connection.prototype.processData = function() {
     ' (' + payloadLen + ' bytes)');
 
   if (checksum !== null) {
-    var checksumConfirm = doubleSha256(payload).slice(0, 4);
+    var checksumConfirm = util.sha256(payload).slice(0, 4);
     if (buffertools.compare(checksumConfirm, checksum) !== 0) {
       log.err('[' + this.peer + '] ' +
         'Checksum failed', {
